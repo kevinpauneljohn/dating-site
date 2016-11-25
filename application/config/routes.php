@@ -63,3 +63,5 @@ $route['upload-photo'] = 'User/uploadPic';
 $route['logout'] = 'User/logout';
 $route['update-user-status'] = 'User/update_user_status';
 $route['check'] = 'User/check_online_user';
+$route['account-profile/(:any)'] = 'User/other_account/$1';
+$route['user-lists'] = 'User/view_all_user';
