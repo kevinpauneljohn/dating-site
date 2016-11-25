@@ -105,5 +105,8 @@ class Profile extends CI_Model
 		$this->db->where('ds_userId',$userid);
 		$this->db->update('ds_useraccount');
 	}
+	public function userlist(){
+		return $this->db->get('ds_useraccount')->result();
+	}
 			
 }
