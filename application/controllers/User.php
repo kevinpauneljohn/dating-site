@@ -348,5 +348,23 @@ class User extends CI_Controller {
 
 		printf("%d years, %d months, %d days, %d hours, %d minuts\n, %d seconds\n", $years, $months, $days, $hours, $minuts, $seconds);
 	}
+	
+	////// other account ///////
+	public function other_account($uname){
+		$data['user'] = $uname; 
+		$data['User'] = $this;
+		$data['title'] = 'User account profile';
+		$this->load->view('templates/header',$data);
+		$this->load->view('userProfile/account-profile',$data);
+		$this->load->view('templates/footer');
+	}
+	public function view_all_user(){
+		$data['title'] = 'List of all user';
+		$data['User'] = $this;
+		$data['users'] = $this->Profile->userlist();
+		$this->load->view('templates/header',$data);
+		$this->load->view('userProfile/list',$data);
+		$this->load->view('templates/footer');
+	}
 }
 ?>
